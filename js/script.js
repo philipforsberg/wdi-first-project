@@ -4,23 +4,45 @@
 $(() => {
 
 
-  const boxChosen = [];
 
   const $audio = $('#audio').get(0);
-  const $buttons = $('.soundbox');
+  const $boxes = $('.soundbox');
+  let boxChosen = [];
 
 
-  function checkForMatch() {
-    if (boxChosen[0] === boxChosen[1]){
-      alert('Match!');
-      // (boxChosen[0]).setAttribute('src', 'images/red_check.png');
-      // (boxChosen[1]).setAttribute('src', 'images/red_check.png');
-    }
-    else {
-      alert('Try again');
+  for(let i = 0; i < $boxes.length; i++){
+    const target = Math.floor(Math.random() * $boxes.length -1) + 1;
+    const target2 = Math.floor(Math.random() * $boxes.length -1) +1;
+    $boxes.eq(target).before($boxes.eq(target2));
+  }
+
+
+
+  function checkResult() {
+    const numItems = $('.correct').length;
+    console.log(numItems);
+    if (numItems === 20) {
+
     }
   }
 
+  //
+  function checkForMatch() {
+    if (boxChosen[0] === boxChosen[1]){
+      console.log('Match!');
+      $(`[data-id="${boxChosen[0]}"]`).attr('src', 'images/red_check.png');
+      $(`[data-id="${boxChosen[0]}"]`).addClass('correct');
+      boxChosen = [];
+      checkResult();
+    } else {
+      console.log('Try again');
+      setTimeout( function() {
+        $(`[data-id="${boxChosen[0]}"]`).attr('src', 'images/blue_square.png');
+        $(`[data-id="${boxChosen[1]}"]`).attr('src', 'images/blue_square.png');
+        boxChosen = [];
+      } , 1250);
+    }
+  }
 
   function playSound(e) {
     const filename = $(e.target).attr('data-id');
@@ -29,29 +51,16 @@ $(() => {
     console.log(filename);
     $(e.target).attr('src', 'images/music.png');
     boxChosen.push(filename);
-    if (boxChosen.length === 2) {
+    if (boxChosen.length === 2){
       checkForMatch();
     }
   }
 
 
+  $boxes.on('click', playSound);
 
-  $buttons.on('click', playSound);
-
-
-
-
-
-
-  // var flipCard = function(){
-  //   var cardId = this.getAttribute('data-id');
-  //   this.setAttribute('src', (cards[cardId].cardImage));
-  //   if (cardsInPlay.length === 2) {
-  //     checkForMatch();
-  //   }
-  //   cardsInPlay.push(cards[cardId].rank);
-  // };
-
+  //on click, check for match, if 2 cards are face up, then check if it"s a pair
+  // if its a pair, play sound
 
 
 

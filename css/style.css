@@ -19,7 +19,7 @@ main {
 }
 ul {
   display: flex;
-  width: 850px;
+  width: 800px;
   flex-wrap: wrap;
   justify-content: space-around;
   flex-direction: row;
@@ -30,11 +30,16 @@ li {
   margin: 20px;
 }
 
+.correct {
+  border: 2px solid red;
+  pointer-events: none;
+}
+
 .soundbox {
   width: 90px;
   height: 105px;
 }
-
+/*
 ul li:nth-child(1):after {
   content: "1";
 }
@@ -95,7 +100,7 @@ ul li:nth-child(19):after {
 }
 ul li:nth-child(20):after {
   content: "20";
-}
+}*/
 
 
 footer {
