@@ -3,11 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>My First Website Online</title>
-    <script type="text/javascript" src="./js/script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
+    <script src="js/script.js" charset="utf-8"></script>
   </head>
   <body>
+    <audio id="audio">
+      Your browser does not support audio.
+    </audio>
     <header>
       <h1>Memory Game</h1>
     </header>
@@ -16,33 +20,32 @@
 
       <div class="gameboard">
         <ul class="grid">
-          <li><img class="soundbox" src="./images/red_check.png" alt="Image1"></li>
-          <li><img class="soundbox" src="./images/blue_square.png" alt="Image1"></li>
-          <li><img class="soundbox" src="./images/blue_square.png" alt="Image1"></li>
-          <li><img class="soundbox" src="./images/blue_square.png" alt="Image1"></li>
-          <li><img class="soundbox" src="./images/blue_square.png" alt="Image1"></li>
-          <li><img class="soundbox" src="./images/blue_square.png" alt="Image1"></li>
-          <li><img class="soundbox" src="./images/blue_square.png" alt="Image1"></li>
-          <li><img class="soundbox" src="./images/blue_square.png" alt="Image1"></li>
-          <li><img class="soundbox" src="./images/blue_square.png" alt="Image1"></li>
-          <li><img class="soundbox" src="./images/blue_square.png" alt="Image1"></li>
-          <li><img class="soundbox" src="./images/blue_square.png" alt="Image1"></li>
-          <li><img class="soundbox" src="./images/blue_square.png" alt="Image1"></li>
-          <li><img class="soundbox" src="./images/blue_square.png" alt="Image1"></li>
-          <li><img class="soundbox" src="./images/blue_square.png" alt="Image1"></li>
-          <li><img class="soundbox" src="./images/blue_square.png" alt="Image1"></li>
-          <li><img class="soundbox" src="./images/blue_square.png" alt="Image1"></li>
-          <li><img class="soundbox" src="./images/blue_square.png" alt="Image1"></li>
-          <li><img class="soundbox" src="./images/blue_square.png" alt="Image1"></li>
-          <li><img class="soundbox" src="./images/blue_square.png" alt="Image1"></li>
-          <li><img class="soundbox" src="./images/blue_square.png" alt="Image1"></li>
+          <li><img class="soundbox" data-id="brickbreak" src="./images/blue_square.png" alt="Image1"></li>
+          <li><img class="soundbox" data-id="brickbreak" src="./images/blue_square.png" alt="Image1"></li>
+          <li><img class="soundbox" data-id="pause" src="./images/blue_square.png" alt="Image1"></li>
+          <li><img class="soundbox" data-id="pause" src="./images/blue_square.png" alt="Image1"></li>
+          <li><img class="soundbox" data-id="mariodies" src="./images/blue_square.png" alt="Image1"></li>
+          <li><img class="soundbox" data-id="mariodies" src="./images/blue_square.png" alt="Image1"></li>
+          <li><img class="soundbox" data-id="fireball" src="./images/blue_square.png" alt="Image1"></li>
+          <li><img class="soundbox" data-id="fireball" src="./images/blue_square.png" alt="Image1"></li>
+          <li><img class="soundbox" data-id="jump" src="./images/blue_square.png" alt="Image1"></li>
+          <li><img class="soundbox" data-id="jump" src="./images/blue_square.png" alt="Image1"></li>
+          <li><img class="soundbox" data-id="oneup" src="./images/blue_square.png" alt="Image1"></li>
+          <li><img class="soundbox" data-id="oneup" src="./images/blue_square.png" alt="Image1"></li>
+          <li><img class="soundbox" data-id="pipe" src="./images/blue_square.png" alt="Image1"></li>
+          <li><img class="soundbox" data-id="pipe" src="./images/blue_square.png" alt="Image1"></li>
+          <li><img class="soundbox" data-id="coin" src="./images/blue_square.png" alt="Image1"></li>
+          <li><img class="soundbox" data-id="coin" src="./images/blue_square.png" alt="Image1"></li>
+          <li><img class="soundbox" data-id="yoshi" src="./images/blue_square.png" alt="Image1"></li>
+          <li><img class="soundbox" data-id="yoshi" src="./images/blue_square.png" alt="Image1"></li>
+          <li><img class="soundbox" data-id="mario" src="./images/blue_square.png" alt="Image1"></li>
+          <li><img class="soundbox" data-id="mario" src="./images/blue_square.png" alt="Image1"></li>
         </ul>
       </div>
 
     </main>
     <footer>
       <p>Made By Philip Forsberg</p>
-      <p>I do not own the copyright to sounds etc</p>
     </footer>
   </body>
 </html>

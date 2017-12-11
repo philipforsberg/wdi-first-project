@@ -10,7 +10,7 @@ header {
 
 }
 body {
-  background-color: rgba(245, 95, 245, 1);
+  background-color: rgba(245, 240, 95, 1);
 }
 
 main {
@@ -23,6 +23,7 @@ ul {
   flex-wrap: wrap;
   justify-content: space-around;
   flex-direction: row;
+  list-style-type: none;
 }
 
 li {
@@ -33,6 +34,7 @@ li {
   width: 90px;
   height: 105px;
 }
+
 ul li:nth-child(1):after {
   content: "1";
 }
