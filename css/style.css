@@ -1,3 +1,101 @@
+* {
+  box-sizing: border-box;
+  border: 1px solid blue;
+  font-family: 'Indie Flower', cursive;
+}
+
+header {
+  text-align: center;
+  font-size: 30px;
+
+}
 body {
-  background-color: red;
+  background-color: rgba(245, 95, 245, 1);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+ul {
+  display: flex;
+  width: 850px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+li {
+  margin: 20px;
+}
+
+.soundbox {
+  width: 90px;
+  height: 105px;
+}
+ul li:nth-child(1):after {
+  content: "1";
+}
+
+ul li:nth-child(2):after {
+  content: "2";
+}
+ul li:nth-child(3):after {
+  content: "3";
+}
+ul li:nth-child(4):after {
+  content: "4";
+}
+ul li:nth-child(5):after {
+  content: "5";
+}
+ul li:nth-child(6):after {
+  content: "6";
+}
+ul li:nth-child(7):after {
+  content: "7";
+}
+ul li:nth-child(8):after {
+  content: "8";
+}
+ul li:nth-child(9):after {
+  content: "9";
+}
+ul li:nth-child(10):after {
+  content: "10";
+}
+ul li:nth-child(11):after {
+  content: "11";
+}
+ul li:nth-child(12):after {
+  content: "12";
+}
+ul li:nth-child(13):after {
+  content: "13";
+}
+ul li:nth-child(14):after {
+  content: "14";
+}
+ul li:nth-child(15):after {
+  content: "15";
+}
+ul li:nth-child(16):after {
+  content: "16";
+}
+ul li:nth-child(17):after {
+  content: "17";
+}
+ul li:nth-child(18):after {
+  content: "18";
+}
+ul li:nth-child(19):after {
+  content: "19";
+}
+ul li:nth-child(20):after {
+  content: "20";
+}
+
+
+footer {
+  text-align: right;
 }
