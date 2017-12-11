@@ -11,7 +11,6 @@ $(() => {
 
 
   function checkForMatch() {
-    const $imageChange =
     if (boxChosen[0] === boxChosen[1]){
       alert('Match!');
       // (boxChosen[0]).setAttribute('src', 'images/red_check.png');
