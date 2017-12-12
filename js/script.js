@@ -11,14 +11,9 @@ $(() => {
   let boxChosen = [];
 
 
-
   $gridList.each(function(){
-    // get current ul
     const $ul = $(this);
-    // get array of list items in current ul
     const $liArr = $ul.children('li');
-    console.log($liArr);
-    // sort array of list items in current ul randomly
     $liArr.sort(function(a,b){
       // Get a random number between 0 and 10
       const temp = parseInt( Math.random()*10 );
@@ -29,27 +24,8 @@ $(() => {
       // Return -1, 0, or +1
       return( isOddOrEven*isPosOrNeg );
     });
-    // append list items to ul
     $liArr.appendTo($ul);
   });
-
-  //
-  // function shuffle (array) {
-  //   var i = 0
-  //     , j = 0
-  //     , temp = null
-  //
-  //   for (i = array.length - 1; i > 0; i -= 1) {
-  //     j = Math.floor(Math.random() * (i + 1))
-  //     temp = array[i]
-  //     array[i] = array[j]
-  //     array[j] = temp
-  //   }
-  // }
-
-
-
-
 
 
 
@@ -97,7 +73,6 @@ $(() => {
   }
 
   const $timer = $('.timer');
-
   let time = 0;
   let timerIsRunning = false;
   let timerId = null;
@@ -115,10 +90,8 @@ $(() => {
   }
 
 
+
   $boxes.on('click', playSound);
-
-  //on click, check for match, if 2 cards are face up, then check if it"s a pair
-
 
 
 });
