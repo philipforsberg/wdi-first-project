@@ -8,8 +8,12 @@ $(() => {
   const $audio = $('#audio').get(0);
   const $boxes = $('.soundbox');
   const $gridList = $('ul');
+  const $gameStarter = $('.letsgo');
   let boxChosen = [];
 
+  $gameStarter.on('click', function() {
+    $('.instructions').addClass('goaway');
+  });
 
   $gridList.each(function(){
     const $ul = $(this);
