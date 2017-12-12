@@ -10,6 +10,10 @@ $(() => {
   const $gridList = $('ul');
   const $gameStarter = $('.letsgo');
   let boxChosen = [];
+  const $timer = $('.timer');
+  let time = 0;
+  let timerIsRunning = false;
+  let timerId = null;
 
   $gameStarter.on('click', function() {
     $('.instructions').addClass('goaway');
@@ -36,9 +40,8 @@ $(() => {
   function checkResult() {
     const numItems = $('.correct').length;
     if (numItems === 20) {
-      alert(`Winner! You did it in ${time} seconds!`);
-      timerIsRunning = false;
-      startTimer();
+      $('.finished').removeClass('goaway');
+      $('.clearedlevel').text(`You cleared the level in ${time} seconds!`);
     }
   }
 
@@ -76,10 +79,6 @@ $(() => {
     }
   }
 
-  const $timer = $('.timer');
-  let time = 0;
-  let timerIsRunning = false;
-  let timerId = null;
 
   function startTimer() {
     if (timerIsRunning) {

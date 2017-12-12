@@ -17,18 +17,37 @@ main {
   justify-content: center;
 }
 
+h2 {
+  font-size: 38px;
+  color: black;
+}
+
 .instructions {
   position: absolute;
   margin: 100px auto 0 auto;
-  width: 600px;
-  border: 3px solid green;
+  width: 630px;
+  border: 7px solid green;
   border-radius: 40px;
-  padding: 25px;
+  padding: 25px 50px 40px 50px;
   text-align: center;
   background: rgba(245, 240, 0, 1);
   z-index: 1000;
   color: blue;
   font-size: 22px;
+}
+
+.finished {
+  position: absolute;
+  margin: 100px auto 0 auto;
+  width: 630px;
+  border: 7px solid blue;
+  border-radius: 40px;
+  padding: 25px 50px 40px 50px;
+  text-align: center;
+  background: rgba(245, 240, 0, 1);
+  z-index: 1000;
+  color: blue;
+  font-size: 26px;
 }
 
 ul {
@@ -70,6 +89,7 @@ li {
   background: blue;
   color: yellow;
 }
+
 .setnull {
   pointer-events: none;
 }
