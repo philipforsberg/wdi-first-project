@@ -104,13 +104,13 @@ li {
 }
 
 .clock {
-  display: flex;
-  font-size: 22px;
+  display: inline;
+  font-size: 30px;
 }
 
 .timer {
-  font-size: 24px;
-  margin-top: 20px;
+  font-size: 40px;
+  margin-top: -20px;
   margin-left: 5px;
 }
 

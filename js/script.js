@@ -4,11 +4,10 @@
 $(() => {
 
 
-
   const $audio = $('#audio').get(0);
   const $boxes = $('.soundbox');
   const $gridList = $('ul');
-  const $gameStarter = $('.letsgo');
+  const $instructions = $('.letsgo');
   const $resetPage = $('.reset');
   let boxChosen = [];
   const $timer = $('.timer');
@@ -90,18 +89,19 @@ $(() => {
     }
   }
 
-
-  $gameStarter.on('click', function() {
+  function removeInstructions() {
     $('.instructions').addClass('goaway');
-  });
+  }
+
+  // function
+
+  $instructions.on('click', removeInstructions);
 
   $boxes.on('click', playSound);
 
   $resetPage.on('click', function() {
     location.reload();
   });
-
-
 
 
 
