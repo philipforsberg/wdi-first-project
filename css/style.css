@@ -81,15 +81,24 @@ li {
 }
 
 .letsgo {
-  border: 2px solid yellow;
+  border: 2px solid rgba(245, 240, 0, 1);
   border-radius: 10px;
   width: 125px;
   padding: 5px;
   margin: 0 auto;
   background: blue;
-  color: yellow;
+  color: rgba(245, 240, 0, 1);
 }
 
+.reset {
+  border: 2px solid rgba(245, 240, 0, 1);
+  border-radius: 10px;
+  width: 125px;
+  padding: 5px;
+  margin: 0 auto;
+  background: blue;
+  color: rgba(245, 240, 0, 1);
+}
 .setnull {
   pointer-events: none;
 }

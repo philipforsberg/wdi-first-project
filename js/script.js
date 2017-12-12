@@ -9,15 +9,13 @@ $(() => {
   const $boxes = $('.soundbox');
   const $gridList = $('ul');
   const $gameStarter = $('.letsgo');
+  const $resetPage = $('.reset');
   let boxChosen = [];
   const $timer = $('.timer');
   let time = 0;
   let timerIsRunning = false;
   let timerId = null;
 
-  $gameStarter.on('click', function() {
-    $('.instructions').addClass('goaway');
-  });
 
   $gridList.each(function(){
     const $ul = $(this);
@@ -93,8 +91,18 @@ $(() => {
   }
 
 
+  $gameStarter.on('click', function() {
+    $('.instructions').addClass('goaway');
+  });
 
   $boxes.on('click', playSound);
+
+  $resetPage.on('click', function() {
+    location.reload();
+  });
+
+
+
 
 
 });
