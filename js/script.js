@@ -56,7 +56,9 @@ $(() => {
   function checkResult() {
     const numItems = $('.correct').length;
     if (numItems === 20) {
-      alert('Winner!');
+      alert(`Winner! You did it in ${time} seconds!`);
+      timerIsRunning = false;
+      startTimer();
     }
   }
 
@@ -96,10 +98,21 @@ $(() => {
 
   const $timer = $('.timer');
 
+  let time = 0;
+  let timerIsRunning = false;
+  let timerId = null;
+
   function startTimer() {
-
+    if (timerIsRunning) {
+      console.log(time);
+    } else {
+      timerId =  setInterval(() => {
+        time++;
+        $timer.text(time);
+      }, 1000);
+      timerIsRunning = true;
+    }
   }
-
 
 
   $boxes.on('click', playSound);
