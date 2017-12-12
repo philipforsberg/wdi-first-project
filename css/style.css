@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  border: 1px solid blue;
+  /*border: 1px solid blue;*/
   font-family: 'Indie Flower', cursive;
 }
 
@@ -24,6 +24,8 @@ ul {
   justify-content: space-around;
   flex-direction: row;
   list-style-type: none;
+  margin-right: 100px;
+  margin-left: 150px;
 }
 
 li {
@@ -32,7 +34,6 @@ li {
 
 .correct {
   border: 2px solid red;
-  pointer-events: none;
 }
 
 .soundbox {
@@ -40,6 +41,22 @@ li {
   height: 105px;
 }
 
+.setnull {
+  pointer-events: none;
+}
+
+.clock {
+  display: flex;
+  font-size: 22px;
+}
+
+.timer {
+  font-size: 24px;
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+/*
 ul li:nth-child(1):after {
   content: "1";
 }
@@ -100,7 +117,7 @@ ul li:nth-child(19):after {
 }
 ul li:nth-child(20):after {
   content: "20";
-}
+}*/
 
 
 footer {

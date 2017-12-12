@@ -7,46 +7,46 @@ $(() => {
 
   const $audio = $('#audio').get(0);
   const $boxes = $('.soundbox');
+  const $gridList = $('ul');
   let boxChosen = [];
 
 
-  // for(let i = 0; i < $boxes.length; i++){
-  //   const target = Math.floor(Math.random() * $boxes.length -1) + 1;
-  //   const target2 = Math.floor(Math.random() * $boxes.length -1) +1;
-  //   $boxes.eq(target).before($boxes.eq(target2));
-  // }
-  //
-  // const dataIdArray = ['brickbreak', 'brickbreak', 'pause', 'pause', 'mariodies', 'mariodies', 'fireball', 'fireball', 'jump', 'jump','oneup', 'oneup', 'pipe', 'pipe', 'coin', 'coin', 'yoshi', 'yoshi', 'mario', 'mario'];
-  //
-  // function randomId() {
-  //   for (let i=0; i < $boxes.length; i++) {
-  //     const randomNumber = Math.floor(Math.random()) * $boxes.length;
-  //
-  //   }
-  // }
 
-
-  // randomId();
-
-  $('ul').each(function(){
+  $gridList.each(function(){
     // get current ul
-    var $ul = $(this);
+    const $ul = $(this);
     // get array of list items in current ul
-    var $liArr = $ul.children('li');
+    const $liArr = $ul.children('li');
+    console.log($liArr);
     // sort array of list items in current ul randomly
     $liArr.sort(function(a,b){
       // Get a random number between 0 and 10
-      var temp = parseInt( Math.random()*10 );
+      const temp = parseInt( Math.random()*10 );
       // Get 1 or 0, whether temp is odd or even
-      var isOddOrEven = temp%2;
+      const isOddOrEven = temp%2;
       // Get +1 or -1, whether temp greater or smaller than 5
-      var isPosOrNeg = temp>5 ? 1 : -1;
+      const isPosOrNeg = temp>5 ? 1 : -1;
       // Return -1, 0, or +1
       return( isOddOrEven*isPosOrNeg );
-    })
+    });
     // append list items to ul
-      .appendTo($ul);
+    $liArr.appendTo($ul);
   });
+
+  //
+  // function shuffle (array) {
+  //   var i = 0
+  //     , j = 0
+  //     , temp = null
+  //
+  //   for (i = array.length - 1; i > 0; i -= 1) {
+  //     j = Math.floor(Math.random() * (i + 1))
+  //     temp = array[i]
+  //     array[i] = array[j]
+  //     array[j] = temp
+  //   }
+  // }
+
 
 
 
@@ -55,7 +55,6 @@ $(() => {
 
   function checkResult() {
     const numItems = $('.correct').length;
-    console.log(numItems);
     if (numItems === 20) {
       alert('Winner!');
     }
@@ -71,11 +70,13 @@ $(() => {
       checkResult();
     } else {
       console.log('Try again');
+      $boxes.addClass('setnull');
       setTimeout( function() {
         $(`[data-id="${boxChosen[0]}"]`).attr('src', 'images/blue_square.png');
         $(`[data-id="${boxChosen[1]}"]`).attr('src', 'images/blue_square.png');
         boxChosen = [];
-      } , 1250);
+        $boxes.removeClass('setnull');
+      } , 1000);
     }
   }
 
@@ -85,18 +86,25 @@ $(() => {
     $audio.play();
     console.log(filename);
     $(e.target).attr('src', 'images/music.png');
+    $(e.target).addClass('setnull');
     boxChosen.push(filename);
+    startTimer();
     if (boxChosen.length === 2){
       checkForMatch();
     }
   }
 
+  const $timer = $('.timer');
+
+  function startTimer() {
+
+  }
+
+
 
   $boxes.on('click', playSound);
 
   //on click, check for match, if 2 cards are face up, then check if it"s a pair
-  // if its a pair, play sound
-
 
 
 
