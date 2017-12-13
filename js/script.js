@@ -17,64 +17,64 @@ $(() => {
 
   const levelOneArray = [
     {
-      type: 'sound',
+      type: 'data-sound',
       id: 'brickbreak'
     },{
-      type: 'sound',
+      type: 'data-sound',
       id: 'brickbreak'
     },{
-      type: 'sound',
+      type: 'data-sound',
       id: 'pause'
     },{
-      type: 'sound',
+      type: 'data-sound',
       id: 'pause'
     },{
-      type: 'sound',
+      type: 'data-sound',
       id: 'mariodies'
     },{
-      type: 'sound',
+      type: 'data-sound',
       id: 'mariodies'
     },{
-      type: 'sound',
+      type: 'data-sound',
       id: 'fireball'
     },{
-      type: 'sound',
+      type: 'data-sound',
       id: 'fireball'
     },{
-      type: 'sound',
+      type: 'data-sound',
       id: 'jump'
     },{
-      type: 'sound',
+      type: 'data-sound',
       id: 'jump'
     },{
-      type: 'sound',
+      type: 'data-sound',
       id: 'oneup'
     },{
-      type: 'sound',
+      type: 'data-sound',
       id: 'oneup'
     },{
-      type: 'sound',
+      type: 'data-sound',
       id: 'pipe'
     },{
-      type: 'sound',
+      type: 'data-sound',
       id: 'pipe'
     },{
-      type: 'sound',
+      type: 'data-sound',
       id: 'coin'
     },{
-      type: 'sound',
+      type: 'data-sound',
       id: 'coin'
     },{
-      type: 'sound',
+      type: 'data-sound',
       id: 'yoshi'
     },{
-      type: 'sound',
+      type: 'data-sound',
       id: 'yoshi'
     },{
-      type: 'sound',
+      type: 'data-sound',
       id: 'mario'
     },{
-      type: 'sound',
+      type: 'data-sound',
       id: 'mario'
     }];
 
@@ -85,7 +85,8 @@ $(() => {
     const $liArr = $ul.children('li');
     $liArr.each((i, li) => {
       const $img = $(li).children('img');
-      $img.attr('data-sound', levelOneArray[i].id);
+      $img.attr(levelOneArray[i].type, levelOneArray[i].id);
+      console.log($img);
     });
     $liArr.sort(function(a,b){
       const temp = parseInt( Math.random()*10 );
@@ -112,16 +113,16 @@ $(() => {
   function checkForMatch() {
     if (boxChosen[0] === boxChosen[1]){
       console.log('Match!');
-      $(`[data-id="${boxChosen[0]}"]`).attr('src', 'images/red_check.png');
-      $(`[data-id="${boxChosen[0]}"]`).addClass('correct');
+      $(`[data-sound="${boxChosen[0]}"]`).attr('src', 'images/red_check.png');
+      $(`[data-sound="${boxChosen[0]}"]`).addClass('correct');
       boxChosen = [];
       checkResult();
     } else {
       console.log('Try again');
       $boxes.addClass('setnull');
       setTimeout( function() {
-        $(`[data-id="${boxChosen[0]}"]`).attr('src', 'images/blue_square.png');
-        $(`[data-id="${boxChosen[1]}"]`).attr('src', 'images/blue_square.png');
+        $(`[data-sound="${boxChosen[0]}"]`).attr('src', 'images/blue_square.png');
+        $(`[data-sound="${boxChosen[1]}"]`).attr('src', 'images/blue_square.png');
         boxChosen = [];
         $boxes.removeClass('setnull');
       } , 1000);
