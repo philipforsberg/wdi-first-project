@@ -15,7 +15,7 @@ $(() => {
   let time = 0;
   let timerIsRunning = false;
   let timerId = null;
-
+  //
 
   const levelOneObject = [
     {
@@ -85,64 +85,64 @@ $(() => {
   const levelTwoObject = [
     {
       type: 'data-sound',
-      id: 'guardians'
-    },{
-      type: 'data-picture',
-      id: 'guardians'
+      id: 'shrek'
     },{
       type: 'data-sound',
-      id: 'pause'
+      id: 'shrek'
     },{
       type: 'data-sound',
-      id: 'pause'
+      id: 'batman'
     },{
       type: 'data-sound',
-      id: 'mariodies'
+      id: 'batman'
     },{
       type: 'data-sound',
-      id: 'mariodies'
+      id: 'pulpfiction'
     },{
       type: 'data-sound',
-      id: 'fireball'
+      id: 'pulpfiction'
     },{
       type: 'data-sound',
-      id: 'fireball'
+      id: 'austinpowers'
     },{
       type: 'data-sound',
-      id: 'jump'
+      id: 'austinpowers'
     },{
       type: 'data-sound',
-      id: 'jump'
+      id: 'godfather'
     },{
       type: 'data-sound',
-      id: 'oneup'
+      id: 'godfather'
     },{
       type: 'data-sound',
-      id: 'oneup'
+      id: 'terminator'
     },{
       type: 'data-sound',
-      id: 'pipe'
+      id: 'terminator'
     },{
       type: 'data-sound',
-      id: 'pipe'
+      id: 'starwars'
     },{
       type: 'data-sound',
-      id: 'coin'
+      id: 'starwars'
     },{
       type: 'data-sound',
-      id: 'coin'
+      id: 'goodmorning'
     },{
       type: 'data-sound',
-      id: 'yoshi'
+      id: 'goodmorning'
     },{
       type: 'data-sound',
-      id: 'yoshi'
+      id: 'themask'
     },{
       type: 'data-sound',
-      id: 'mario'
+      id: 'themask'
     },{
       type: 'data-sound',
-      id: 'mario'
+      id: 'jerrymaguire'
+    },{
+      type: 'data-sound',
+      id: 'jerrymaguire'
     }];
 
 
