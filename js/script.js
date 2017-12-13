@@ -15,18 +15,81 @@ $(() => {
   let timerIsRunning = false;
   let timerId = null;
 
+  // const levelOneArray = [
+  //   {
+  //     type: 'sound',
+  //     id: 'brickbreak'
+  //   },{
+  //     type: 'sound',
+  //     id: 'brickbreak'
+  //   },{
+  //     type: 'sound',
+  //     id: 'pause'
+  //   },{
+  //     type: 'sound',
+  //     id: 'pause'
+  //   },{
+  //     type: 'sound',
+  //     id: 'mariodies'
+  //   },{
+  //     type: 'sound',
+  //     id: 'mariodies'
+  //   },{
+  //     type: 'sound',
+  //     id: 'fireball'
+  //   },{
+  //     type: 'sound',
+  //     id: 'fireball'
+  //   },{
+  //     type: 'sound',
+  //     id: 'jump'
+  //   },{
+  //     type: 'sound',
+  //     id: 'jump'
+  //   },{
+  //     type: 'sound',
+  //     id: 'oneup'
+  //   },{
+  //     type: 'sound',
+  //     id: 'oneup'
+  //   },{
+  //     type: 'sound',
+  //     id: 'pipe'
+  //   },{
+  //     type: 'sound',
+  //     id: 'pipe'
+  //   },{
+  //     type: 'sound',
+  //     id: 'coin'
+  //   },{
+  //     type: 'sound',
+  //     id: 'coin'
+  //   },{
+  //     type: 'sound',
+  //     id: 'yoshi'
+  //   },{
+  //     type: 'sound',
+  //     id: 'yoshi'
+  //   },{
+  //     type: 'sound',
+  //     id: 'mario'
+  //   },{
+  //     type: 'sound',
+  //     id: 'mario'
+  //   }];
 
+  // Randomizing list order
   $gridList.each(function(){
     const $ul = $(this);
     const $liArr = $ul.children('li');
+    // $liArr.each(($listItem) => {
+    //   $listItem.data(levelOneArray);
+    // });
+    // console.log($liArr);
     $liArr.sort(function(a,b){
-      // Get a random number between 0 and 10
       const temp = parseInt( Math.random()*10 );
-      // Get 1 or 0, whether temp is odd or even
       const isOddOrEven = temp%2;
-      // Get +1 or -1, whether temp greater or smaller than 5
       const isPosOrNeg = temp>5 ? 1 : -1;
-      // Return -1, 0, or +1
       return( isOddOrEven*isPosOrNeg );
     });
     $liArr.appendTo($ul);
@@ -34,6 +97,7 @@ $(() => {
 
 
 
+  // Checking if player has found all pairs, and showing the Result-screen
   function checkResult() {
     const numItems = $('.correct').length;
     if (numItems === 20) {
@@ -42,7 +106,8 @@ $(() => {
     }
   }
 
-  //
+
+  //Checking for match, by checking the two values in the array, then clearing the array
   function checkForMatch() {
     if (boxChosen[0] === boxChosen[1]){
       console.log('Match!');
@@ -62,6 +127,8 @@ $(() => {
     }
   }
 
+
+  // Function for playing sounds, and starts of the whole chain of functions for the game
   function playSound(e) {
     const filename = $(e.target).attr('data-id');
     $audio.src = `sounds/${filename}.wav`;
@@ -77,6 +144,7 @@ $(() => {
   }
 
 
+  // Function for the timer
   function startTimer() {
     if (timerIsRunning) {
       console.log(time);
@@ -89,20 +157,16 @@ $(() => {
     }
   }
 
+
   function removeInstructions() {
     $('.instructions').addClass('goaway');
   }
 
-  // function
-
+  // Event listeners
   $instructions.on('click', removeInstructions);
-
   $boxes.on('click', playSound);
-
   $resetPage.on('click', function() {
     location.reload();
   });
-
-
 
 });
