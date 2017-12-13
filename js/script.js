@@ -78,19 +78,15 @@ $(() => {
       id: 'mario'
     }];
 
-  // console.log(levelOneArray);
 
   // Randomizing list order
   $gridList.each(function(){
     const $ul = $(this);
     const $liArr = $ul.children('li');
-    // const $imgArr = $liArr.children('img');
     $liArr.each((i, li) => {
-      // const img = $(li).children()[0];
-      $(li).data("sound", "mario");
-      console.log(li);
+      const $img = $(li).children('img');
+      $img.attr('data-sound', levelOneArray[i].id);
     });
-    // console.log($liArr);
     $liArr.sort(function(a,b){
       const temp = parseInt( Math.random()*10 );
       const isOddOrEven = temp%2;
