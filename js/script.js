@@ -84,65 +84,65 @@ $(() => {
 
   const levelTwoObject = [
     {
-      type: 'data-sound',
+      type: 'sound',
       id: 'shrek'
     },{
       type: 'picture',
-      id: 'images/shrek.png'
+      id: 'shrek'
     },{
       type: 'sound',
       id: 'batman'
     },{
-      type: 'data-picture',
-      id: 'images/batman.png'
+      type: 'picture',
+      id: 'batman.'
     },{
       type: 'sound',
       id: 'pulpfiction'
     },{
       type: 'picture',
-      id: 'images/pulpfiction.jpg'
+      id: 'pulpfiction'
     },{
       type: 'sound',
       id: 'austinpowers'
     },{
       type: 'picture',
-      id: 'images/austinpowers.jpg'
+      id: 'austinpowers'
     },{
       type: 'sound',
       id: 'godfather'
     },{
       type: 'picture',
-      id: 'images/godfather.jpg'
+      id: 'godfather'
     },{
       type: 'sound',
       id: 'terminator'
     },{
       type: 'picture',
-      id: 'images/terminator.png'
+      id: 'terminator'
     },{
       type: 'sound',
       id: 'starwars'
     },{
       type: 'picture',
-      id: 'starwars.jpeg'
+      id: 'starwars'
     },{
       type: 'sound',
       id: 'goodmorning'
     },{
       type: 'picture',
-      id: 'images/goodmorning.jpg'
+      id: 'goodmorning'
     },{
       type: 'sound',
       id: 'themask'
     },{
       type: 'picture',
-      id: 'images/themask.jpg'
+      id: 'themask'
     },{
       type: 'sound',
       id: 'jerrymaguire'
     },{
       type: 'picture',
-      id: 'images/jerrymaguire.jpg'
+      id: 'jerrymaguire'
     }];
 
   console.log(levelTwoObject);
@@ -174,7 +174,7 @@ $(() => {
       const $liArr = $ul.children('li');
       $liArr.each((i, li) => {
         const $img = $(li).children('img');
-        $img.attr(levelTwoObject[i].type, levelTwoObject[i].id);
+        $img.attr(`data-${levelTwoObject[i].type}`, levelTwoObject[i].id);
       });
       $liArr.sort(function(a,b){
         const temp = parseInt( Math.random()*10 );
@@ -221,14 +221,51 @@ $(() => {
 
 
   // Function for playing sounds, and starts of the whole chain of functions for the game
+  // function clickMade(e) {
+  //   const filename = $(e.target).attr(`data-${levelOneObject[0].type}`);
+  //   $audio.src = `sounds/${filename}.wav`;
+  //   $audio.play();
+  //   console.log(filename);
+  //   // const imageSource = $(e.target).attr('data-picture');
+  //   // $(e.target).attr('src', imageSource);
+  //   $(e.target).attr('src', 'images/music.png');
+  //   $(e.target).addClass('setnull');
+  //   boxChosen.push(filename);
+  //   startTimer();
+  //   if (boxChosen.length === 2){
+  //     checkForMatch();
+  //   }
+  // }
+
+  // function clickMade(e) {
+  //   const filename = $(e.target).attr(`data-${levelOneObject[0].type}`);
+  //   console.log(filename);
+  //   if ((levelOneObject[0].type) === 'sound') {
+  //     $audio.src = `sounds/${filename}.wav`;
+  //     $audio.play();
+  //     $(e.target).attr('src', 'images/music.png');
+  //   } else if  ((levelOneObject[0].type) === 'picture'){
+  //     $(e.target).attr('src', `.images/${levelOneObject[0].id}.png`);
+  //   }
+  //   $(e.target).addClass('setnull');
+  //   boxChosen.push(filename);
+  //   startTimer();
+  //   if (boxChosen.length === 2){
+  //     checkForMatch();
+  //   }
+  // }
+
   function clickMade(e) {
-    const filename = $(e.target).attr('data-sound');
-    $audio.src = `sounds/${filename}.wav`;
-    $audio.play();
+    const filename = $(e.target).attr(`data-${levelTwoObject[0].type}`);
     console.log(filename);
-    // const imageSource = $(e.target).attr('data-picture');
-    // $(e.target).attr('src', imageSource);
-    $(e.target).attr('src', 'images/music.png');
+    console.log(levelTwoObject[0].type);
+    if ((levelTwoObject[0].type) === 'sound') {
+      $audio.src = `sounds/${filename}.wav`;
+      $audio.play();
+      $(e.target).attr('src', 'images/music.png');
+    } else if  (($(e.target).levelTwoObject[0].type) === 'picture'){
+      $(e.target).attr('src', `.images/${levelTwoObject[0].id}.png`);
+    }
     $(e.target).addClass('setnull');
     boxChosen.push(filename);
     startTimer();
