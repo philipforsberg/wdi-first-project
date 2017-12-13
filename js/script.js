@@ -218,7 +218,7 @@ $(() => {
   }
 
 
-
+ 
 
   // Function for playing sounds, and starts of the whole chain of functions for the game
   function playSound(e) {
