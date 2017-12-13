@@ -7,7 +7,8 @@ $(() => {
   const $audio = $('#audio').get(0);
   const $boxes = $('.soundbox');
   const $gridList = $('ul');
-  const $instructions = $('.letsgo');
+  const $levelOne = $('.levelone');
+  const $levelTwo = $('.leveltwo');
   const $resetPage = $('.reset');
   let boxChosen = [];
   const $timer = $('.timer');
@@ -15,7 +16,8 @@ $(() => {
   let timerIsRunning = false;
   let timerId = null;
 
-  const levelOneArray = [
+
+  const levelOneObject = [
     {
       type: 'data-sound',
       id: 'brickbreak'
@@ -79,23 +81,109 @@ $(() => {
     }];
 
 
-  // Randomizing list order
-  $gridList.each(function(){
-    const $ul = $(this);
-    const $liArr = $ul.children('li');
-    $liArr.each((i, li) => {
-      const $img = $(li).children('img');
-      $img.attr(levelOneArray[i].type, levelOneArray[i].id);
-    });
-    $liArr.sort(function(a,b){
-      const temp = parseInt( Math.random()*10 );
-      const isOddOrEven = temp%2;
-      const isPosOrNeg = temp>5 ? 1 : -1;
-      return( isOddOrEven*isPosOrNeg );
-    });
-    $liArr.appendTo($ul);
-  });
 
+  const levelTwoObject = [
+    {
+      type: 'data-sound',
+      id: 'guardians'
+    },{
+      type: 'data-picture',
+      id: 'guardians'
+    },{
+      type: 'data-sound',
+      id: 'pause'
+    },{
+      type: 'data-sound',
+      id: 'pause'
+    },{
+      type: 'data-sound',
+      id: 'mariodies'
+    },{
+      type: 'data-sound',
+      id: 'mariodies'
+    },{
+      type: 'data-sound',
+      id: 'fireball'
+    },{
+      type: 'data-sound',
+      id: 'fireball'
+    },{
+      type: 'data-sound',
+      id: 'jump'
+    },{
+      type: 'data-sound',
+      id: 'jump'
+    },{
+      type: 'data-sound',
+      id: 'oneup'
+    },{
+      type: 'data-sound',
+      id: 'oneup'
+    },{
+      type: 'data-sound',
+      id: 'pipe'
+    },{
+      type: 'data-sound',
+      id: 'pipe'
+    },{
+      type: 'data-sound',
+      id: 'coin'
+    },{
+      type: 'data-sound',
+      id: 'coin'
+    },{
+      type: 'data-sound',
+      id: 'yoshi'
+    },{
+      type: 'data-sound',
+      id: 'yoshi'
+    },{
+      type: 'data-sound',
+      id: 'mario'
+    },{
+      type: 'data-sound',
+      id: 'mario'
+    }];
+
+
+  // Randomizing list order level one
+  function levelOneChosen() {
+    $gridList.each(function(){
+      const $ul = $(this);
+      const $liArr = $ul.children('li');
+      $liArr.each((i, li) => {
+        const $img = $(li).children('img');
+        $img.attr(levelOneObject[i].type, levelOneObject[i].id);
+      });
+      $liArr.sort(function(a,b){
+        const temp = parseInt( Math.random()*10 );
+        const isOddOrEven = temp%2;
+        const isPosOrNeg = temp>5 ? 1 : -1;
+        return( isOddOrEven*isPosOrNeg );
+      });
+      $liArr.appendTo($ul);
+    });
+  }
+
+
+  // Randomizing list order level two
+  function levelTwoChosen() {
+    $gridList.each(function(){
+      const $ul = $(this);
+      const $liArr = $ul.children('li');
+      $liArr.each((i, li) => {
+        const $img = $(li).children('img');
+        $img.attr(levelTwoObject[i].type, levelTwoObject[i].id);
+      });
+      $liArr.sort(function(a,b){
+        const temp = parseInt( Math.random()*10 );
+        const isOddOrEven = temp%2;
+        const isPosOrNeg = temp>5 ? 1 : -1;
+        return( isOddOrEven*isPosOrNeg );
+      });
+      $liArr.appendTo($ul);
+    });
+  }
 
 
   // Checking if player has found all pairs, and showing the Result-screen
@@ -159,12 +247,20 @@ $(() => {
   }
 
 
-  function removeInstructions() {
+  function setupLevelOne() {
     $('.instructions').addClass('goaway');
+    levelOneChosen();
   }
 
+  function setupLevelTwo() {
+    $('.instructions').addClass('goaway');
+    levelTwoChosen();
+  }
+
+
   // Event listeners
-  $instructions.on('click', removeInstructions);
+  $levelOne.on('click', setupLevelOne);
+  $levelTwo.on('click', setupLevelTwo);
   $boxes.on('click', playSound);
   $resetPage.on('click', function() {
     location.reload();

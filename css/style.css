@@ -80,10 +80,14 @@ li {
   display: none;
 }
 
-.letsgo {
+.chooselevel {
+  display: flex;
+}
+
+.levelone , .leveltwo {
   border: 2px solid rgba(245, 240, 0, 1);
   border-radius: 10px;
-  width: 125px;
+  width: 200px;
   padding: 5px;
   margin: 0 auto;
   background: blue;
