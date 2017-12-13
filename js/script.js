@@ -85,63 +85,83 @@ $(() => {
   const levelTwoObject = [
     {
       type: 'data-sound',
+      pic: 'images/music.png',
       id: 'shrek'
     },{
       type: 'data-sound',
+      pic: 'shrek',
       id: 'shrek'
     },{
       type: 'data-sound',
+      pic: 'images/music.png',
       id: 'batman'
     },{
       type: 'data-sound',
+      pic: 'batman',
       id: 'batman'
     },{
       type: 'data-sound',
+      pic: 'images/music.png',
       id: 'pulpfiction'
     },{
       type: 'data-sound',
+      pic: 'pulpfiction',
       id: 'pulpfiction'
     },{
       type: 'data-sound',
+      pic: 'images/music.png',
       id: 'austinpowers'
     },{
       type: 'data-sound',
+      pic: 'austinpowers',
       id: 'austinpowers'
     },{
       type: 'data-sound',
+      pic: 'images/music.png',
       id: 'godfather'
     },{
       type: 'data-sound',
+      pic: 'godfather',
       id: 'godfather'
     },{
       type: 'data-sound',
+      pic: 'images/music.png',
       id: 'terminator'
     },{
       type: 'data-sound',
+      pic: 'terminator',
       id: 'terminator'
     },{
       type: 'data-sound',
+      pic: 'images/music.png',
       id: 'starwars'
     },{
       type: 'data-sound',
+      pic: 'starwars',
       id: 'starwars'
     },{
       type: 'data-sound',
+      pic: 'images/music.png',
       id: 'goodmorning'
     },{
       type: 'data-sound',
+      pic: 'goodmorning',
       id: 'goodmorning'
     },{
       type: 'data-sound',
+      pic: 'images/music.png',
       id: 'themask'
     },{
       type: 'data-sound',
+      pic: 'themask',
       id: 'themask'
     },{
       type: 'data-sound',
+      pic: 'images/music.png',
       id: 'jerrymaguire'
     },{
       type: 'data-sound',
+      pic: 'jerrymaguire',
       id: 'jerrymaguire'
     }];
 
