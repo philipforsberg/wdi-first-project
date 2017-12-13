@@ -15,76 +15,81 @@ $(() => {
   let timerIsRunning = false;
   let timerId = null;
 
-  // const levelOneArray = [
-  //   {
-  //     type: 'sound',
-  //     id: 'brickbreak'
-  //   },{
-  //     type: 'sound',
-  //     id: 'brickbreak'
-  //   },{
-  //     type: 'sound',
-  //     id: 'pause'
-  //   },{
-  //     type: 'sound',
-  //     id: 'pause'
-  //   },{
-  //     type: 'sound',
-  //     id: 'mariodies'
-  //   },{
-  //     type: 'sound',
-  //     id: 'mariodies'
-  //   },{
-  //     type: 'sound',
-  //     id: 'fireball'
-  //   },{
-  //     type: 'sound',
-  //     id: 'fireball'
-  //   },{
-  //     type: 'sound',
-  //     id: 'jump'
-  //   },{
-  //     type: 'sound',
-  //     id: 'jump'
-  //   },{
-  //     type: 'sound',
-  //     id: 'oneup'
-  //   },{
-  //     type: 'sound',
-  //     id: 'oneup'
-  //   },{
-  //     type: 'sound',
-  //     id: 'pipe'
-  //   },{
-  //     type: 'sound',
-  //     id: 'pipe'
-  //   },{
-  //     type: 'sound',
-  //     id: 'coin'
-  //   },{
-  //     type: 'sound',
-  //     id: 'coin'
-  //   },{
-  //     type: 'sound',
-  //     id: 'yoshi'
-  //   },{
-  //     type: 'sound',
-  //     id: 'yoshi'
-  //   },{
-  //     type: 'sound',
-  //     id: 'mario'
-  //   },{
-  //     type: 'sound',
-  //     id: 'mario'
-  //   }];
+  const levelOneArray = [
+    {
+      type: 'sound',
+      id: 'brickbreak'
+    },{
+      type: 'sound',
+      id: 'brickbreak'
+    },{
+      type: 'sound',
+      id: 'pause'
+    },{
+      type: 'sound',
+      id: 'pause'
+    },{
+      type: 'sound',
+      id: 'mariodies'
+    },{
+      type: 'sound',
+      id: 'mariodies'
+    },{
+      type: 'sound',
+      id: 'fireball'
+    },{
+      type: 'sound',
+      id: 'fireball'
+    },{
+      type: 'sound',
+      id: 'jump'
+    },{
+      type: 'sound',
+      id: 'jump'
+    },{
+      type: 'sound',
+      id: 'oneup'
+    },{
+      type: 'sound',
+      id: 'oneup'
+    },{
+      type: 'sound',
+      id: 'pipe'
+    },{
+      type: 'sound',
+      id: 'pipe'
+    },{
+      type: 'sound',
+      id: 'coin'
+    },{
+      type: 'sound',
+      id: 'coin'
+    },{
+      type: 'sound',
+      id: 'yoshi'
+    },{
+      type: 'sound',
+      id: 'yoshi'
+    },{
+      type: 'sound',
+      id: 'mario'
+    },{
+      type: 'sound',
+      id: 'mario'
+    }];
+
+  // console.log(levelOneArray);
 
   // Randomizing list order
   $gridList.each(function(){
     const $ul = $(this);
     const $liArr = $ul.children('li');
-    // $liArr.each(($listItem) => {
-    //   $listItem.data(levelOneArray);
-    // });
+    // const $imgArr = $liArr.children('img');
+    $liArr.each((i, li) => {
+      // const img = $(li).children()[0];
+      $(li).data("sound", "mario");
+      console.log(li);
+    });
     // console.log($liArr);
     $liArr.sort(function(a,b){
       const temp = parseInt( Math.random()*10 );
@@ -130,7 +135,7 @@ $(() => {
 
   // Function for playing sounds, and starts of the whole chain of functions for the game
   function playSound(e) {
-    const filename = $(e.target).attr('data-id');
+    const filename = $(e.target).attr('data-sound');
     $audio.src = `sounds/${filename}.wav`;
     $audio.play();
     console.log(filename);
