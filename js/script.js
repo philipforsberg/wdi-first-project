@@ -218,15 +218,15 @@ $(() => {
   }
 
 
- 
+
 
   // Function for playing sounds, and starts of the whole chain of functions for the game
-  function playSound(e) {
+  function clickMade(e) {
     const filename = $(e.target).attr('data-sound');
     $audio.src = `sounds/${filename}.wav`;
     $audio.play();
     console.log(filename);
-    // const imageSource = $(e.target).attr('pic');
+    // const imageSource = $(e.target).attr('data-picture');
     // $(e.target).attr('src', imageSource);
     $(e.target).attr('src', 'images/music.png');
     $(e.target).addClass('setnull');
@@ -266,7 +266,7 @@ $(() => {
   // Event listeners
   $levelOne.on('click', setupLevelOne);
   $levelTwo.on('click', setupLevelTwo);
-  $boxes.on('click', playSound);
+  $boxes.on('click', clickMade);
   $resetPage.on('click', function() {
     location.reload();
   });
