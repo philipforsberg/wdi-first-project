@@ -19,64 +19,64 @@ $(() => {
 
   const levelOneObject = [
     {
-      type: 'data-sound',
+      type: 'sound',
       id: 'brickbreak'
     },{
-      type: 'data-sound',
+      type: 'sound',
       id: 'brickbreak'
     },{
-      type: 'data-sound',
+      type: 'sound',
       id: 'pause'
     },{
-      type: 'data-sound',
+      type: 'sound',
       id: 'pause'
     },{
-      type: 'data-sound',
+      type: 'sound',
       id: 'mariodies'
     },{
-      type: 'data-sound',
+      type: 'sound',
       id: 'mariodies'
     },{
-      type: 'data-sound',
+      type: 'sound',
       id: 'fireball'
     },{
-      type: 'data-sound',
+      type: 'sound',
       id: 'fireball'
     },{
-      type: 'data-sound',
+      type: 'sound',
       id: 'jump'
     },{
-      type: 'data-sound',
+      type: 'sound',
       id: 'jump'
     },{
-      type: 'data-sound',
+      type: 'sound',
       id: 'oneup'
     },{
-      type: 'data-sound',
+      type: 'sound',
       id: 'oneup'
     },{
-      type: 'data-sound',
+      type: 'sound',
       id: 'pipe'
     },{
-      type: 'data-sound',
+      type: 'sound',
       id: 'pipe'
     },{
-      type: 'data-sound',
+      type: 'sound',
       id: 'coin'
     },{
-      type: 'data-sound',
+      type: 'sound',
       id: 'coin'
     },{
-      type: 'data-sound',
+      type: 'sound',
       id: 'yoshi'
     },{
-      type: 'data-sound',
+      type: 'sound',
       id: 'yoshi'
     },{
-      type: 'data-sound',
+      type: 'sound',
       id: 'mario'
     },{
-      type: 'data-sound',
+      type: 'sound',
       id: 'mario'
     }];
 
@@ -85,86 +85,67 @@ $(() => {
   const levelTwoObject = [
     {
       type: 'data-sound',
-      pic: 'images/music.png',
       id: 'shrek'
     },{
-      type: 'data-sound',
-      pic: 'shrek',
-      id: 'shrek'
+      type: 'picture',
+      id: 'images/shrek.png'
     },{
-      type: 'data-sound',
-      pic: 'images/music.png',
+      type: 'sound',
       id: 'batman'
     },{
-      type: 'data-sound',
-      pic: 'batman',
-      id: 'batman'
+      type: 'data-picture',
+      id: 'images/batman.png'
     },{
-      type: 'data-sound',
-      pic: 'images/music.png',
+      type: 'sound',
       id: 'pulpfiction'
     },{
-      type: 'data-sound',
-      pic: 'pulpfiction',
-      id: 'pulpfiction'
+      type: 'picture',
+      id: 'images/pulpfiction.jpg'
     },{
-      type: 'data-sound',
-      pic: 'images/music.png',
+      type: 'sound',
       id: 'austinpowers'
     },{
-      type: 'data-sound',
-      pic: 'austinpowers',
-      id: 'austinpowers'
+      type: 'picture',
+      id: 'images/austinpowers.jpg'
     },{
-      type: 'data-sound',
-      pic: 'images/music.png',
+      type: 'sound',
       id: 'godfather'
     },{
-      type: 'data-sound',
-      pic: 'godfather',
-      id: 'godfather'
+      type: 'picture',
+      id: 'images/godfather.jpg'
     },{
-      type: 'data-sound',
-      pic: 'images/music.png',
+      type: 'sound',
       id: 'terminator'
     },{
-      type: 'data-sound',
-      pic: 'terminator',
-      id: 'terminator'
+      type: 'picture',
+      id: 'images/terminator.png'
     },{
-      type: 'data-sound',
-      pic: 'images/music.png',
+      type: 'sound',
       id: 'starwars'
     },{
-      type: 'data-sound',
-      pic: 'starwars',
-      id: 'starwars'
+      type: 'picture',
+      id: 'starwars.jpeg'
     },{
-      type: 'data-sound',
-      pic: 'images/music.png',
+      type: 'sound',
       id: 'goodmorning'
     },{
-      type: 'data-sound',
-      pic: 'goodmorning',
-      id: 'goodmorning'
+      type: 'picture',
+      id: 'images/goodmorning.jpg'
     },{
-      type: 'data-sound',
-      pic: 'images/music.png',
+      type: 'sound',
       id: 'themask'
     },{
-      type: 'data-sound',
-      pic: 'themask',
-      id: 'themask'
+      type: 'picture',
+      id: 'images/themask.jpg'
     },{
-      type: 'data-sound',
-      pic: 'images/music.png',
+      type: 'sound',
       id: 'jerrymaguire'
     },{
-      type: 'data-sound',
-      pic: 'jerrymaguire',
-      id: 'jerrymaguire'
+      type: 'picture',
+      id: 'images/jerrymaguire.jpg'
     }];
 
+  console.log(levelTwoObject);
 
   // Randomizing list order level one
   function levelOneChosen() {
@@ -173,7 +154,7 @@ $(() => {
       const $liArr = $ul.children('li');
       $liArr.each((i, li) => {
         const $img = $(li).children('img');
-        $img.attr(levelOneObject[i].type, levelOneObject[i].id);
+        $img.attr(`data-${levelOneObject[i].type}`, levelOneObject[i].id);
       });
       $liArr.sort(function(a,b){
         const temp = parseInt( Math.random()*10 );
@@ -237,12 +218,16 @@ $(() => {
   }
 
 
+
+
   // Function for playing sounds, and starts of the whole chain of functions for the game
   function playSound(e) {
     const filename = $(e.target).attr('data-sound');
     $audio.src = `sounds/${filename}.wav`;
     $audio.play();
     console.log(filename);
+    // const imageSource = $(e.target).attr('pic');
+    // $(e.target).attr('src', imageSource);
     $(e.target).attr('src', 'images/music.png');
     $(e.target).addClass('setnull');
     boxChosen.push(filename);
