@@ -86,7 +86,6 @@ $(() => {
     $liArr.each((i, li) => {
       const $img = $(li).children('img');
       $img.attr(levelOneArray[i].type, levelOneArray[i].id);
-      console.log($img);
     });
     $liArr.sort(function(a,b){
       const temp = parseInt( Math.random()*10 );
