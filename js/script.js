@@ -81,7 +81,6 @@ $(() => {
     }];
 
 
-
   const levelTwoObject = [
     {
       type: 'sound',
@@ -94,7 +93,7 @@ $(() => {
       id: 'batman'
     },{
       type: 'picture',
-      id: 'batman.'
+      id: 'batman'
     },{
       type: 'sound',
       id: 'pulpfiction'
@@ -202,6 +201,7 @@ $(() => {
     if (boxChosen[0] === boxChosen[1]){
       console.log('Match!');
       $(`[data-sound="${boxChosen[0]}"]`).attr('src', 'images/red_check.png');
+      $(`[data-sound="${boxChosen[1]}"]`).attr('src', 'images/red_check.png');
       $(`[data-sound="${boxChosen[0]}"]`).addClass('correct');
       boxChosen = [];
       checkResult();
@@ -217,57 +217,20 @@ $(() => {
     }
   }
 
-
-
-
-  // Function for playing sounds, and starts of the whole chain of functions for the game
-  // function clickMade(e) {
-  //   const filename = $(e.target).attr(`data-${levelOneObject[0].type}`);
-  //   $audio.src = `sounds/${filename}.wav`;
-  //   $audio.play();
-  //   console.log(filename);
-  //   // const imageSource = $(e.target).attr('data-picture');
-  //   // $(e.target).attr('src', imageSource);
-  //   $(e.target).attr('src', 'images/music.png');
-  //   $(e.target).addClass('setnull');
-  //   boxChosen.push(filename);
-  //   startTimer();
-  //   if (boxChosen.length === 2){
-  //     checkForMatch();
-  //   }
-  // }
-
-  // function clickMade(e) {
-  //   const filename = $(e.target).attr(`data-${levelOneObject[0].type}`);
-  //   console.log(filename);
-  //   if ((levelOneObject[0].type) === 'sound') {
-  //     $audio.src = `sounds/${filename}.wav`;
-  //     $audio.play();
-  //     $(e.target).attr('src', 'images/music.png');
-  //   } else if  ((levelOneObject[0].type) === 'picture'){
-  //     $(e.target).attr('src', `.images/${levelOneObject[0].id}.png`);
-  //   }
-  //   $(e.target).addClass('setnull');
-  //   boxChosen.push(filename);
-  //   startTimer();
-  //   if (boxChosen.length === 2){
-  //     checkForMatch();
-  //   }
-  // }
-
   function clickMade(e) {
-    const filename = $(e.target).attr(`data-${levelTwoObject[0].type}`);
-    console.log(filename);
-    console.log(levelTwoObject[0].type);
-    if ((levelTwoObject[0].type) === 'sound') {
-      $audio.src = `sounds/${filename}.wav`;
+    const soundFilename = $(e.target).attr('data-sound');
+    const pictureFilename = $(e.target).attr('data-picture');
+    console.log(soundFilename);
+    if ($(e.target).attr('data-sound')) {
+      $audio.src = `sounds/${soundFilename}.wav`;
       $audio.play();
       $(e.target).attr('src', 'images/music.png');
-    } else if  (($(e.target).levelTwoObject[0].type) === 'picture'){
-      $(e.target).attr('src', `.images/${levelTwoObject[0].id}.png`);
+      boxChosen.push(soundFilename);
+    } else if  ($(e.target).attr('data-picture')){
+      $(e.target).attr('src', `images/${pictureFilename}.png`);
+      boxChosen.push(pictureFilename);
     }
     $(e.target).addClass('setnull');
-    boxChosen.push(filename);
     startTimer();
     if (boxChosen.length === 2){
       checkForMatch();
