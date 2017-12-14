@@ -201,8 +201,9 @@ $(() => {
     if (boxChosen[0] === boxChosen[1]){
       console.log('Match!');
       $(`[data-sound="${boxChosen[0]}"]`).attr('src', 'images/red_check.png');
-      $(`[data-sound="${boxChosen[1]}"]`).attr('src', 'images/red_check.png');
+      $(`[data-picture="${boxChosen[1]}"]`).attr('src', 'images/red_check.png');
       $(`[data-sound="${boxChosen[0]}"]`).addClass('correct');
+      $(`[data-picture="${boxChosen[1]}"]`).addClass('correct');
       boxChosen = [];
       checkResult();
     } else {
@@ -210,7 +211,9 @@ $(() => {
       $boxes.addClass('setnull');
       setTimeout( function() {
         $(`[data-sound="${boxChosen[0]}"]`).attr('src', 'images/blue_square.png');
+        $(`[data-picture="${boxChosen[0]}"]`).attr('src', 'images/blue_square.png');
         $(`[data-sound="${boxChosen[1]}"]`).attr('src', 'images/blue_square.png');
+        $(`[data-picture="${boxChosen[1]}"]`).attr('src', 'images/blue_square.png');
         boxChosen = [];
         $boxes.removeClass('setnull');
       } , 1000);
