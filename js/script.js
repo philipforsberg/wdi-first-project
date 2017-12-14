@@ -144,8 +144,6 @@ $(() => {
       id: 'jerrymaguire'
     }];
 
-  console.log(levelTwoObject);
-
   // Randomizing list order level one
   function levelOneChosen() {
     $gridList.each(function(){
@@ -190,7 +188,7 @@ $(() => {
   function checkResult() {
     const numItems = $('.correct').length;
     if (numItems === 20) {
-      $('.finished').removeClass('goaway');
+      $('.winner').removeClass('goaway');
       $('.clearedlevel').text(`You cleared the level in ${time} seconds!`);
     }
   }
@@ -223,7 +221,6 @@ $(() => {
   function clickMade(e) {
     const soundFilename = $(e.target).attr('data-sound');
     const pictureFilename = $(e.target).attr('data-picture');
-    console.log(soundFilename);
     if ($(e.target).attr('data-sound')) {
       $audio.src = `sounds/${soundFilename}.wav`;
       $audio.play();
@@ -234,7 +231,6 @@ $(() => {
       boxChosen.push(pictureFilename);
     }
     $(e.target).addClass('setnull');
-    startTimer();
     if (boxChosen.length === 2){
       checkForMatch();
     }
@@ -242,7 +238,27 @@ $(() => {
 
 
   // Function for the timer
-  function startTimer() {
+  function startTimerOne() {
+    time = 1;
+    if (timerIsRunning) {
+      console.log(time);
+    } else {
+      timerId =  setInterval(() => {
+        time--;
+        $timer.text(time);
+        if(time === 0) {
+          clearInterval(timerId);
+          $audio.src = 'sounds/mariodies.wav';
+          $audio.play();
+          $('.loser').removeClass('goaway');
+          $('.clearedlevel').text('The good news is, you can try as many times as you want!');
+          $boxes.addClass('setnull');
+        }
+      }, 1000);
+      timerIsRunning = true;
+    }
+  }
+  function startTimerTwo() {
     if (timerIsRunning) {
       console.log(time);
     } else {
@@ -258,11 +274,13 @@ $(() => {
   function setupLevelOne() {
     $('.instructions').addClass('goaway');
     levelOneChosen();
+    startTimerOne();
   }
 
   function setupLevelTwo() {
     $('.instructions').addClass('goaway');
     levelTwoChosen();
+    startTimerTwo();
   }
 
 
@@ -273,5 +291,9 @@ $(() => {
   $resetPage.on('click', function() {
     location.reload();
   });
+
+  // Cursor porperties
+  // $levelOne.css('cursor', 'pointer');
+  // $levelTwo.css('cursor', 'pointer');
 
 });
