@@ -13,7 +13,7 @@ body {
 }
 
 .greenbackground {
-  background: rgba(50, 245, 128, 1);
+  background: rgba(245, 203, 50, 1);
 }
 
 main {
@@ -94,7 +94,7 @@ li {
   border-radius: 10px;
   width: 200px;
   padding: 5px;
-  margin: 0 auto;
+  margin: 30px auto;
   background: rgba(245, 0 , 0, 1);
   color: rgba(245, 240, 0, 1);
   display: flex;
