@@ -190,6 +190,8 @@ $(() => {
     if (numItems === 20) {
       $('.winner').removeClass('goaway');
       $('.clearedlevel').text(`You cleared the level in ${time} seconds!`);
+      $audio.src = 'sounds/stageclear.wav';
+      $audio.play();
     }
   }
 
@@ -248,7 +250,7 @@ $(() => {
         $timer.text(time);
         if(time === 0) {
           clearInterval(timerId);
-          $audio.src = 'sounds/mariodies.wav';
+          $audio.src = 'sounds/gameover.wav';
           $audio.play();
           $('.loser').removeClass('goaway');
           $('.clearedlevel').text('The good news is, you can try as many times as you want!');
