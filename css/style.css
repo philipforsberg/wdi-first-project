@@ -29,8 +29,8 @@ h2 {
 .instructions {
   position: absolute;
   margin: 50px auto 0 auto;
-  width: 630px;
-  border: 7px solid green;
+  width: 650px;
+  border: 7px solid rgba(245, 0 , 0, 1);
   border-radius: 40px;
   padding: 25px 50px 40px 50px;
   text-align: center;
@@ -44,7 +44,7 @@ h2 {
   position: absolute;
   margin: 100px auto 0 auto;
   width: 630px;
-  border: 7px solid blue;
+  border: 7px solid rgba(0, 50 , 245, 1);
   border-radius: 40px;
   padding: 25px 50px 40px 50px;
   text-align: center;
@@ -72,7 +72,7 @@ li {
 }
 
 .correct {
-  border: 2px solid red;
+  border: 2px solid rgba(245, 0 , 0, 1);
   pointer-events: none;
 }
 
@@ -95,7 +95,7 @@ li {
   width: 200px;
   padding: 5px;
   margin: 0 auto;
-  background: blue;
+  background: rgba(245, 0 , 0, 1);
   color: rgba(245, 240, 0, 1);
   display: flex;
   justify-content: center;
@@ -108,7 +108,7 @@ li {
   width: 125px;
   padding: 5px;
   margin: 0 auto;
-  background: blue;
+  background: rgba(245, 0 , 0, 1);
   color: rgba(245, 240, 0, 1);
   cursor: pointer;
 }
@@ -126,69 +126,6 @@ li {
   margin-top: -20px;
   margin-left: 5px;
 }
-
-/*
-ul li:nth-child(1):after {
-  content: "1";
-}
-
-ul li:nth-child(2):after {
-  content: "2";
-}
-ul li:nth-child(3):after {
-  content: "3";
-}
-ul li:nth-child(4):after {
-  content: "4";
-}
-ul li:nth-child(5):after {
-  content: "5";
-}
-ul li:nth-child(6):after {
-  content: "6";
-}
-ul li:nth-child(7):after {
-  content: "7";
-}
-ul li:nth-child(8):after {
-  content: "8";
-}
-ul li:nth-child(9):after {
-  content: "9";
-}
-ul li:nth-child(10):after {
-  content: "10";
-}
-ul li:nth-child(11):after {
-  content: "11";
-}
-ul li:nth-child(12):after {
-  content: "12";
-}
-ul li:nth-child(13):after {
-  content: "13";
-}
-ul li:nth-child(14):after {
-  content: "14";
-}
-ul li:nth-child(15):after {
-  content: "15";
-}
-ul li:nth-child(16):after {
-  content: "16";
-}
-ul li:nth-child(17):after {
-  content: "17";
-}
-ul li:nth-child(18):after {
-  content: "18";
-}
-ul li:nth-child(19):after {
-  content: "19";
-}
-ul li:nth-child(20):after {
-  content: "20";
-}*/
 
 
 footer {

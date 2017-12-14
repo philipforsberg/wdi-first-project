@@ -306,6 +306,7 @@ $(() => {
     location.reload();
   });
 
+
   // Cursor porperties
   // $levelOne.css('cursor', 'pointer');
   // $levelTwo.css('cursor', 'pointer');
