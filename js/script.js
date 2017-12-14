@@ -10,6 +10,7 @@ $(() => {
   const $levelOne = $('.levelone');
   const $levelTwo = $('.leveltwo');
   const $resetPage = $('.reset');
+  const $body = $('body');
   let boxChosen = [];
   const $timer = $('.timer');
   let time = 0;
@@ -291,6 +292,7 @@ $(() => {
 
   function setupLevelTwo() {
     $('.instructions').addClass('goaway');
+    $body.addClass('greenbackground');
     levelTwoChosen();
     startTimerTwo();
   }
