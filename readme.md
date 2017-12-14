@@ -33,6 +33,7 @@
 ### Ideas for new features / Things that are not done yet
   For things I haven't yet managed to implement in the game, I can think of a few things. For example a high-score board, a reset button that only does a soft reset and not reloads the whole page and adding animations for the outcomes(win or lose) and more.
   DRYing up my code is also high up on the list, considering there are numerous places in my code that I've repeated myself(one for each level basically).
+  And making the game responsive for different sizes of equipment.
 
   I also might add a third level, but this one might only sounds, or maybe try to randomize it so that it can be either sounds or pictures. So that on one board the pairs can consist of two of the same sounds, two of the same picture, or one of each.
 
