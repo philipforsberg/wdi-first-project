@@ -15,7 +15,6 @@ $(() => {
   let time = 0;
   let timerIsRunning = false;
   let timerId = null;
-  //
 
   const levelOneObject = [
     {
@@ -32,10 +31,10 @@ $(() => {
       id: 'pause'
     },{
       type: 'sound',
-      id: 'mariodies'
+      id: 'vines'
     },{
       type: 'sound',
-      id: 'mariodies'
+      id: 'vines'
     },{
       type: 'sound',
       id: 'fireball'
@@ -189,9 +188,11 @@ $(() => {
     const numItems = $('.correct').length;
     if (numItems === 20) {
       $('.winner').removeClass('goaway');
-      $('.clearedlevel').text(`You cleared the level in ${time} seconds!`);
+      $('.clearedlevel').text(`You cleared the level with ${time} seconds to go!`);
       $audio.src = 'sounds/stageclear.wav';
       $audio.play();
+      timerIsRunning = true;
+      startTimerOne();
     }
   }
 
@@ -241,9 +242,9 @@ $(() => {
 
   // Function for the timer
   function startTimerOne() {
-    time = 1;
+    time = 90;
     if (timerIsRunning) {
-      console.log(time);
+      clearInterval(timerId);
     } else {
       timerId =  setInterval(() => {
         time--;
@@ -261,12 +262,21 @@ $(() => {
     }
   }
   function startTimerTwo() {
+    time = 220;
     if (timerIsRunning) {
-      console.log(time);
+      clearInterval(timerId);
     } else {
       timerId =  setInterval(() => {
-        time++;
+        time--;
         $timer.text(time);
+        if(time === 0) {
+          clearInterval(timerId);
+          $audio.src = 'sounds/gameover.wav';
+          $audio.play();
+          $('.loser').removeClass('goaway');
+          $('.clearedlevel').text('The good news is, you can try as many times as you want!');
+          $boxes.addClass('setnull');
+        }
       }, 1000);
       timerIsRunning = true;
     }
