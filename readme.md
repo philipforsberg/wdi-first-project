@@ -15,7 +15,6 @@
 
 
 ### Technologies used
-
   For this game I've used the following technologies:
   - HTML5
   - CSS
