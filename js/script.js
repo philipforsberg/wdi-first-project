@@ -244,7 +244,7 @@ $(() => {
 
   // Function for the timer
   function startTimerOne() {
-    time = 90;
+    time = 60;
     if (timerIsRunning) {
       clearInterval(timerId);
     } else {
@@ -293,6 +293,7 @@ $(() => {
 
   function setupLevelTwo() {
     $('.instructions').addClass('goaway');
+    $('.supermario').addClass('goaway');
     $body.addClass('greenbackground');
     levelTwoChosen();
     startTimerTwo();
@@ -313,9 +314,5 @@ $(() => {
   $resetPage.on('click', function() {
     location.reload();
   });
-
-  // Cursor porperties
-  // $levelOne.css('cursor', 'pointer');
-  // $levelTwo.css('cursor', 'pointer');
 
 });

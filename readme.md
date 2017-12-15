@@ -27,6 +27,7 @@
 
 ### Challenges faced
   Biggest challenge or frustration I met was when I wanted to implement pictures aswell, instead of sound only. Since my code only was meant for sounds at the beginning, it took what felt like ages to make it compatible for pictures aswell.
+  
 
 
 ### Ideas for new features / Things that are not done yet
@@ -38,4 +39,4 @@
 
 ### Acknowledgments
   Thanks to my classmates for help and inspiration when I've been stuck and frustrated.
-  Also thanks to all the copyright holders of the various sounds and images I've used for the game!
+  Also thanks/sorry to all the copyright holders of the various sounds and images I've borrowed for the game!
