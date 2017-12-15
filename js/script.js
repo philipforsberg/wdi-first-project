@@ -225,6 +225,7 @@ $(() => {
   function clickMade(e) {
     const soundFilename = $(e.target).attr('data-sound');
     const pictureFilename = $(e.target).attr('data-picture');
+    $(e.target).removeClass('boxborder');
     if ($(e.target).attr('data-sound')) {
       $audio.src = `sounds/${soundFilename}.wav`;
       $audio.play();
@@ -299,9 +300,16 @@ $(() => {
 
 
   // Event listeners
+
   $levelOne.on('click', setupLevelOne);
   $levelTwo.on('click', setupLevelTwo);
   $boxes.on('click', clickMade);
+  $boxes.on('mouseover', function() {
+    $(this).addClass('boxborder');
+  });
+  $boxes.on('mouseout', function() {
+    $(this).removeClass('boxborder');
+  });
   $resetPage.on('click', function() {
     location.reload();
   });
