@@ -13,6 +13,8 @@
 #### Online
   You can play this game on heroku, [here](https://stormy-sea-23679.herokuapp.com/).
 
+  <img width="1190" alt="project-one-image copy" src="https://user-images.githubusercontent.com/33283923/38242178-0f373afa-372c-11e8-9dbf-2c7cf1dad2ad.png">
+
 
 ### Technologies used
   For this game I've used the following technologies:
@@ -27,7 +29,7 @@
 
 ### Challenges faced
   Biggest challenge or frustration I met was when I wanted to implement pictures aswell, instead of sound only. Since my code only was meant for sounds at the beginning, it took what felt like ages to make it compatible for pictures aswell.
-  
+
 
 
 ### Ideas for new features / Things that are not done yet
